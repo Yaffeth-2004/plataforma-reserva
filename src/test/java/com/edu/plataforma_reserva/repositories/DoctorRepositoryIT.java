@@ -10,7 +10,7 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class DoctorRepositoryIntegrationTest extends AbstractRepositoryIT {
+class DoctorRepositoryIT extends AbstractRepositoryIT {
 
     @Autowired
     private DoctorRepository doctorRepository;
