@@ -19,6 +19,5 @@ public class CreatePatientRequest {
     private String identity;
      @NotBlank(message = "El contacto es obligatorio")
     private String phone;
-     @NotNull(message = "EL estado  del paciente es obligatorio")
-    private PatientStatus status;
+   
 }

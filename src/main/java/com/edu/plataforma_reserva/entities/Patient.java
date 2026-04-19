@@ -26,7 +26,7 @@ public class Patient {
     private String identity;
 
     private String phone;
-
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private PatientStatus status;
 }
