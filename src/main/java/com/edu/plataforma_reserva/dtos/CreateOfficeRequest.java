@@ -18,6 +18,5 @@ public class CreateOfficeRequest {
     @NotBlank(message = "La ubicacion del consultorio es obligatorio")
     private String location;
 
-    @NotNull(message = "El estado del consultorio es obligatorio")
-    private OfficeStatus status;
+
 }

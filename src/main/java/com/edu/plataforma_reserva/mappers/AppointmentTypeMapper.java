@@ -1,5 +1,6 @@
 package com.edu.plataforma_reserva.mappers;
 
+import com.edu.plataforma_reserva.dtos.AppointmentTypeResponse;
 import com.edu.plataforma_reserva.dtos.CreateAppointmentTypeRequest;
 
 import com.edu.plataforma_reserva.entities.AppointmentType;
@@ -14,5 +15,5 @@ public interface AppointmentTypeMapper {
     AppointmentType toEntity(CreateAppointmentTypeRequest request);
 
     // 🔹 Entity → Response
-    AppointmentType toResponse(AppointmentType appointmentType);
+    AppointmentTypeResponse toResponse(AppointmentType appointmentType);
 }
