@@ -22,6 +22,5 @@ public class CreateDoctorRequest {
     @NotNull(message = "El ID de la especialidad del doctor es obligatoria")
     private UUID specialtyId;
 
-    @NotNull(message = "El estado del doctor es obligatorio")
-    private DoctorStatus status;
+
 }

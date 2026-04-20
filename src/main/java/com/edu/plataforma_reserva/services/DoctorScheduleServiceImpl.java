@@ -1,6 +1,5 @@
 package com.edu.plataforma_reserva.services;
 
-
 import com.edu.plataforma_reserva.dtos.CreateDoctorScheduleRequest;
 import com.edu.plataforma_reserva.dtos.DoctorScheduleResponse;
 import com.edu.plataforma_reserva.entities.Doctor;
@@ -26,10 +25,10 @@ public class DoctorScheduleServiceImpl implements DoctorScheduleService {
 
     // 🔹 CREATE SCHEDULE
     @Override
-    public DoctorScheduleResponse createSchedule(CreateDoctorScheduleRequest request) {
+    public DoctorScheduleResponse createSchedule(UUID doctorId, CreateDoctorScheduleRequest request) {
 
         // 🔥 Validar doctor
-        Doctor doctor = doctorRepository.findById(request.getDoctorId())
+        Doctor doctor = doctorRepository.findById(doctorId)
                 .orElseThrow(() -> new ResourceNotFoundException("Doctor no encontrado"));
 
         // 🔥 Validar horas
@@ -40,7 +39,7 @@ public class DoctorScheduleServiceImpl implements DoctorScheduleService {
 
         // 🔥 Validar traslape
         boolean overlap = scheduleRepository.existsOverlappingSchedule(
-                request.getDoctorId(),
+                doctorId,
                 request.getDayOfWeek(),
                 request.getStartTime(),
                 request.getEndTime()
@@ -50,6 +49,7 @@ public class DoctorScheduleServiceImpl implements DoctorScheduleService {
             throw new BusinessException("Ya existe un horario que se traslapa");
         }
 
+        // 🔥 Mapear y asignar doctor
         DoctorSchedule schedule = scheduleMapper.toEntity(request);
         schedule.setDoctor(doctor);
 

@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public interface DoctorScheduleService {
 
-    DoctorScheduleResponse createSchedule(CreateDoctorScheduleRequest request);
 
+    DoctorScheduleResponse createSchedule(UUID doctorId, CreateDoctorScheduleRequest request);
     List<DoctorScheduleResponse> getSchedulesByDoctor(UUID doctorId);
 }
