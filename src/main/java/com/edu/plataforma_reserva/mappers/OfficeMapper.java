@@ -14,7 +14,7 @@ public interface OfficeMapper {
     Office toEntity(CreateOfficeRequest request);
 
     // 🔹 Entity → Response
-    Office toResponse(Office office);
+    OfficeResponse toResponse(Office office);
 
     // 🔹 Update parcial
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)

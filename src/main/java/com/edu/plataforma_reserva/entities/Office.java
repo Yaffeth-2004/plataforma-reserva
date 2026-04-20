@@ -24,6 +24,7 @@ public class Office {
 
     private String location;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private OfficeStatus status;
 
