@@ -9,4 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface AppointmentTypeRepository extends JpaRepository<AppointmentType, UUID> {
+    boolean existsByNameIgnoreCase(String name);
 }
