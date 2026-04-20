@@ -25,7 +25,7 @@ public class SpecialtyServiceImpl implements SpecialtyService {
     public SpecialtyResponse createSpecialty(CreateSpecialtyRequest request) {
 
         // 🔥 Validación importante (evitar duplicados)
-        if (specialtyRepository.exis(request.getName())) {
+        if (specialtyRepository.existsByNameIgnoreCase(request.getName())) {
             throw new BusinessException("La especialidad ya existe");
         }
 
