@@ -27,6 +27,5 @@ public class CreateDoctorScheduleRequest {
     @NotNull(message = "El fin del horario del doctor es obligatorio")
     private LocalTime endTime;
 
-   @NotNull(message = "El ID del doctor en este horario es obligatorio")
-    private UUID doctorId;
+
 }
